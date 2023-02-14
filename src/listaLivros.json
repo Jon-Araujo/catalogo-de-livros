@@ -1,0 +1,18 @@
+{    
+    "livros": [
+        {
+            "id": 1,
+            "titulo": "Use a Cabeça: Java",
+            "resumo": "Use a cabeça! Java é uma experiência completa de aprendizado em programação orientada a objetos (OO) e Java.",
+            "Editora": "Alta Books",
+            "Autores": "Bert Bates e Kathy Sierra"
+        },
+        {
+            "id": 2,
+            "titulo": "Java, como Programar",
+            "resumo": "Milhões de alunos e profissionais aprenderam programação e desenvolvimento de software com os livros Deitel.",
+            "Editora": "Pearson",
+            "Autores": "Paul Deitel e Harvey Deitel"
+        }
+    ]
+}
