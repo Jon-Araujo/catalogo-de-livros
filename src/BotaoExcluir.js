@@ -1,10 +1,13 @@
-function BotaoExcluir() {
-    const linhaLivro = document.querySelector(".linhaLivro");
-    const botao = document.getElementById(1);
+import listaLivros from "./listaLivros.json"
 
-    botao.addEventListener("click", () => {
-        linhaLivro.remove();
-    })
+function BotaoExcluir() {
+    for (let i = 0; i < listaLivros.livros.length; i++) {
+        let linhaLivro = document.getElementById(`${listaLivros.livros[i].id}`);
+        let botao = document.getElementById(`botao${i}`);
+        botao.addEventListener("click", () => {
+            linhaLivro.remove();
+        })
+    }
 }
 
 export default BotaoExcluir;
