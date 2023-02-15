@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import listaLivros from './listaLivros.json';
+import BotaoExcluir from './BotaoExcluir';
 
 const divStyle = {
     backgroundColor: 'black',
@@ -14,15 +16,8 @@ const styleButton = {
     borderRadius: '8px'
 };
 
-const livros = [];
-async function getListaLivros() {
-    const listaLivros = await(await fetch("listaLivros.json")).json().livros;
-    for (let i in listaLivros) {
-        livros.push(listaLivros[i]);
-    }
-}
 
-function Tabela(props) {
+function Principal() {
     return (
         <table>
             <tr style={divStyle}>
@@ -32,21 +27,40 @@ function Tabela(props) {
                 <td>Autores</td>
             </tr>
             <tr className="linhaLivro">
-                <td><p>{props.titulo}</p><button style={styleButton}>Excluir</button></td>
-                <td><p>{props.resumo}</p></td>
-                <td><p>{props.editora}</p></td>
-                <td><ul>{props.autores}</ul></td>
+                <td><p>{listaLivros.livros[0].titulo}</p><button value={listaLivros.livros[0].id} style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
+                <td><p>{listaLivros.livros[0].resumo}</p></td>
+                <td><p>{listaLivros.livros[0].editora}</p></td>
+                <td><ul>{listaLivros.livros[0].autores}</ul></td>
+            </tr>
+            <tr className="linhaLivro">
+                <td><p>{listaLivros.livros[1].titulo}</p><button style={styleButton}>Excluir</button></td>
+                <td><p>{listaLivros.livros[1].resumo}</p></td>
+                <td><p>{listaLivros.livros[1].editora}</p></td>
+                <td><ul>{listaLivros.livros[1].autores}</ul></td>
+            </tr>
+            <tr className="linhaLivro">
+                <td><p>{listaLivros.livros[2].titulo}</p><button style={styleButton}>Excluir</button></td>
+                <td><p>{listaLivros.livros[2].resumo}</p></td>
+                <td><p>{listaLivros.livros[2].editora}</p></td>
+                <td><ul>{listaLivros.livros[2].autores}</ul></td>
             </tr>
         </table>
     )
 }
 
-function Principal() {
-    return (
-        <div>
-            <Tabela titulo={livros[0].titulo} resumo="eader familiar with Horstmann's original, two-volume 'Core Java' books" editora="Addison Wesley" autores="Cay Horstmann" />
-        </div>
+function Auxiliar() {
+    let i = 0;
+    while (i < listaLivros.livros.length){
+        return (
+        <tr className="linhaLivro">
+            <td><p>{listaLivros.livros[i].titulo}</p><button style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
+            <td><p>{listaLivros.livros[i].resumo}</p></td>
+            <td><p>{listaLivros.livros[i].editora}</p></td>
+            <td><ul>{listaLivros.livros[i].autores}</ul></td>
+        </tr>
     )
+    }
+    
 }
 
 
