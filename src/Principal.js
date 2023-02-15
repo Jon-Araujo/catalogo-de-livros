@@ -27,7 +27,7 @@ function Principal() {
                 <td>Autores</td>
             </tr>
             <tr className="linhaLivro">
-                <td><p>{listaLivros.livros[0].titulo}</p><button value={listaLivros.livros[0].id} style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
+                <td><p>{listaLivros.livros[0].titulo}</p><button id={listaLivros.livros[0].id} style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
                 <td><p>{listaLivros.livros[0].resumo}</p></td>
                 <td><p>{listaLivros.livros[0].editora}</p></td>
                 <td><ul>{listaLivros.livros[0].autores}</ul></td>
@@ -48,6 +48,8 @@ function Principal() {
     )
 }
 
+
+//função não usada ainda mas servirá para deixar a lista dinâmica
 function Auxiliar() {
     let i = 0;
     while (i < listaLivros.livros.length){

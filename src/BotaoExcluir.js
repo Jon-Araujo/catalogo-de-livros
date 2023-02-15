@@ -1,9 +1,10 @@
-function BotaoExcluir(value) {
-    const linhaLivro = document.querySelectorAll(".linhaLivro");
-    const botao = linhaLivro.button;
-    if (botao.value = 1) {
-        delete (linhaLivro[0])
-    }
+function BotaoExcluir() {
+    const linhaLivro = document.querySelector(".linhaLivro");
+    const botao = document.getElementById(1);
+
+    botao.addEventListener("click", () => {
+        linhaLivro.remove();
+    })
 }
 
 export default BotaoExcluir;
