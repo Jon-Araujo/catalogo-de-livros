@@ -40,7 +40,7 @@ function Auxiliar() {
     for (let i = 0; i < listaLivros.livros.length; i++) {
         passaLista.push(
             <tr id={listaLivros.livros[i].id}>
-                <td><p>{listaLivros.livros[i].titulo}</p><button id={"botao" + i} style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
+                <td><p className='m-1'>{listaLivros.livros[i].titulo}</p><button id={"botao" + i} className="mb-2" style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
                 <td><p>{listaLivros.livros[i].resumo}</p></td>
                 <td><p>{listaLivros.livros[i].editora}</p></td>
                 <td><ul><li>{listaLivros.livros[i].autores}</li></ul></td>
