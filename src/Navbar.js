@@ -7,7 +7,8 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link active text-white" aria-current="page" href="/">Catálogo</a>
+                        <a className="nav-link active text-white" aria-current="page" href="/">Home</a>
+                        <a className="nav-link text-white" href="/Catalogo">Catálogo</a>
                         <a className="nav-link text-white" href="/Novo">Novo</a>
                     </div>
                 </div>

@@ -1,6 +1,5 @@
 import Navbar from './Navbar'
-import Cabecalho from './Cabecalho';
-import Principal from './Principal';
+import Home from './Home'
 import Catalogo from './Catalogo';
 import Novo from './Novo';
 
@@ -8,6 +7,9 @@ function App() {
   let Component
   switch (window.location.pathname) {
     case "/":
+      Component = <Home />
+      break
+    case "/Catalogo":
       Component = <Catalogo />
       break
     case "/Novo":
