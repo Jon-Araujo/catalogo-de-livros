@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import listaLivros from './listaLivros.json';
 import BotaoExcluir from './BotaoExcluir';
 
 const divStyle = {
@@ -24,26 +22,31 @@ const styleWidth = {
 function Principal() {
     return (
         <table style={styleWidth}>
-            <tr style={divStyle}>
-                <td>Título</td>
-                <td>Resumo</td>
-                <td>Editora</td>
-                <td>Autor</td>
-            </tr>
-            <Auxiliar />
+            <thead>
+                <tr style={divStyle}>
+                    <td>Título</td>
+                    <td>Resumo</td>
+                    <td>Editora</td>
+                    <td>Autor</td>
+                </tr>
+            </thead>
+            <tbody>
+                <Auxiliar />
+            </tbody>
         </table>
     )
 }
 
 function Auxiliar() {
+    var bookList = JSON.parse(localStorage.getItem('bookList'));
     let passaLista = [];
-    for (let i = 0; i < listaLivros.livros.length; i++) {
+    for (let i = 0; i < bookList.length; i++) {
         passaLista.push(
-            <tr id={listaLivros.livros[i].id}>
-                <td><p className='m-1'>{listaLivros.livros[i].titulo}</p><button id={"botao" + i} className="mb-2" style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
-                <td><p>{listaLivros.livros[i].resumo}</p></td>
-                <td><p>{listaLivros.livros[i].editora}</p></td>
-                <td><ul><li>{listaLivros.livros[i].autor}</li></ul></td>
+            <tr id={bookList[i].id}>
+                <td><p className='m-1'>{bookList[i].titulo}</p><button id={"botao" + i} className="mb-2" style={styleButton} onClick={BotaoExcluir}>Excluir</button></td>
+                <td><p>{bookList[i].resumo}</p></td>
+                <td><p>{bookList[i].editora}</p></td>
+                <td><ul><li>{bookList[i].autor}</li></ul></td>
             </tr>
         )
     }

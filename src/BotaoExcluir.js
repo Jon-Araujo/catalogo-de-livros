@@ -1,11 +1,12 @@
-import listaLivros from "./listaLivros.json"
-
 function BotaoExcluir() {
-    for (let i = 0; i < listaLivros.livros.length; i++) {
-        let linhaLivro = document.getElementById(`${listaLivros.livros[i].id}`);
+    var bookList = JSON.parse(localStorage.getItem('bookList'));
+    for (let i = 0; i < bookList.length; i++) {
+        let linhaLivro = bookList[i];
         let botao = document.getElementById(`botao${i}`);
         botao.addEventListener("click", () => {
-            linhaLivro.remove();
+            bookList.splice(i, 1);
+            localStorage.bookList = JSON.stringify(bookList)
+            document.location.reload()
         })
     }
 }
