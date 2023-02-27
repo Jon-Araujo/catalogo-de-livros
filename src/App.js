@@ -2,7 +2,6 @@ import Navbar from './Navbar'
 import Home from './Home'
 import Catalogo from './Catalogo';
 import Novo from './Novo';
-import listaLivros from './listaLivros.json';
 
 function App() {
   let Component

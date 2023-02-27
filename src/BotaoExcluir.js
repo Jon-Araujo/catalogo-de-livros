@@ -1,7 +1,6 @@
 function BotaoExcluir() {
     var bookList = JSON.parse(localStorage.getItem('bookList'));
     for (let i = 0; i < bookList.length; i++) {
-        let linhaLivro = bookList[i];
         let botao = document.getElementById(`botao${i}`);
         botao.addEventListener("click", () => {
             bookList.splice(i, 1);

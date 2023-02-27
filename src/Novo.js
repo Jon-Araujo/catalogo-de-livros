@@ -5,7 +5,7 @@ const layoutForm = {
     maxWidth: "70%"
 }
 
-function Novo() { 
+function Novo() {
     return (
         <div className="ms-5">
             <h1 class="my-3">Dados do Livro</h1>

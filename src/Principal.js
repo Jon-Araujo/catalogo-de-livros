@@ -1,5 +1,6 @@
 import React from 'react';
 import BotaoExcluir from './BotaoExcluir';
+import listaLivros from './listaLivros.json';
 
 const divStyle = {
     backgroundColor: 'black',
@@ -38,7 +39,13 @@ function Principal() {
 }
 
 function Auxiliar() {
-    var bookList = JSON.parse(localStorage.getItem('bookList'));
+    if (localStorage.bookList) {
+        var bookList = JSON.parse(localStorage.getItem('bookList'));
+    }
+    else {
+        localStorage.bookList = JSON.stringify(listaLivros.livros);
+    }
+
     let passaLista = [];
     for (let i = 0; i < bookList.length; i++) {
         passaLista.push(
