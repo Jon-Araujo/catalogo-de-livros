@@ -1,5 +1,3 @@
-import listaLivros from "./listaLivros.json";
-
 function BotaoIncluir() {
     if (localStorage.bookList) {
         List = JSON.parse(localStorage.getItem('bookList'))

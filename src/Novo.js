@@ -27,7 +27,7 @@ function Novo() {
             </form>
             <button className="rounded bg-primary text-light border border-1 p-2" id="botao-incluir" onClick={() => {
                 let inputId = document.getElementById('id').value;
-                if (inputId == "") {
+                if (inputId === "") {
                     alert('Você precisa preencher todos os campos!')
                 }
                 else (BotaoIncluir())
